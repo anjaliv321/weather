@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    
+    <div class="one">
+        <h1>Weather Details</h1>
+      
+        <input type="text" class="two"   id="in1" placeholder="Enter a City">
+       <button id="p2"><svg xmlns="http://www.w3.org/2000/svg" width="40" height="48" fill="currentColor" class="bi bi-search" viewBox="0 0 16 16">
+            <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z"/>
+          </svg></button> 
+      <br><br><br><br>
+      <div class="new">
+        <pre>
+  
+    Temperature : <input type="text"id="d" readonly><br><br>
+    Wind        : <input type="text"id="e" readonly><br><br>
+    Description : <input type="text"id="f" readonly><br><br>
+   
+    </pre>
+      </div>
+    </div>
+    <script>
+      let btn= document.getElementById('p2').addEventListener("click", ()=> {
+           let det=document.getElementById("in1").value
+         
+           let k=document.getElementById("d")
+           let l=document.getElementById("e")
+           let m=document.getElementById("f")
+        
+      
+        let url=`https://goweather.herokuapp.com/weather/${det}` 
+        // let url=`https://goweather.herokuapp.com/weather/${det}`
+        let fetched_url=fetch(url)
+        fetched_url.then((response)=>{
+            if(!response.ok){
+              throw new error("network is not responding")
+    
+            }
+            else{
+               return response.json()
+            }
+    
+        })
+        .then((datas)=>{
+
+            k.value =(datas.temperature)
+            l.value =(datas.wind)
+            m.value =(datas.description)
+        })
+        .catch((error)=>{
+            console.log("there is a problem with fetch operation",error)
+        })
+    })
+    </script>
+</body>
+</html>

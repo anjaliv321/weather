@@ -1,0 +1,81 @@
+*{
+    margin: 0;
+}
+body{
+    background-image: url("wetheimg.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
+}
+@keyframes mov{
+    from{
+        transform:scale(0px);
+    }
+    to{
+         transform:scaleY(10px);
+         transition: all;
+
+    }
+}
+.one{
+    height: 500px;
+    width: 500px;
+    /* background-color: rgb(124, 186, 223); */
+    background-image: linear-gradient(white,gray, rgb(110, 77, 116,0.05));
+    /* background-image: url(wetheimg.png); */
+    
+    background-repeat: no-repeat;
+    background-size: cover;
+    border:none;
+    position: relative;
+    top: 50px;
+    
+}
+.two{
+    height: 49px;
+    width: 350px;
+    position: relative;
+    top: 15px;
+    left: 60px;
+    border: 2px solid black;
+}
+/* svg{
+    background-color: black;
+    border: 2px solid black;
+    position: relative;
+    top: 38px;
+    left: 15px;
+} */
+button{
+    position: relative;
+    top: 33px;
+    left: 10px;
+    background-color: rgb(118, 116, 138);
+}
+/* h2{
+    position: relative;
+    top: 50px;
+    left: 50px;
+} */
+
+h1{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.new
+{
+    font-size: 30px;
+    text-align: center;
+    position: relative;
+    left: -30px;
+}
+.new input{
+   
+  border: none;
+  height: 20px;
+ 
+}
